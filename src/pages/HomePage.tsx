@@ -1,31 +1,24 @@
 import React from 'react';
 import { FaDiscord, FaQuestionCircle } from 'react-icons/fa';
+import { MainButton, HomePageStyle, HomePageMiscStyle, Header } from '../styles';
 
 export const HomePage = () => {
-    return <div style={{
-        height: '100%',
-        padding: '50px 0',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    }}>
-        <div style={{ fontSize: '64px' }}><b>Touch Grass Bot Dashboard</b></div>
+    return <HomePageStyle>
+        <Header><b>Touch Grass Bot Dashboard</b></Header>
         <div>
-            <div className="homePageButtons">
+            <MainButton>
                 <FaDiscord size={50} />                
                 <p>Login with Discord</p>
-            </div>
-            <div className="homePageButtons">
+            </MainButton>
+            <MainButton>
                 <FaQuestionCircle size={50} />
                 <p>Support Server</p>
-            </div>
+            </MainButton>
         </div>
-        <div style={{ display: 'flex', width: '500px', justifyContent: 'space-between'}}>
+        <HomePageMiscStyle>
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
             <span>Contact Us</span>
-        </div>
-    </div>;
-};
+        </HomePageMiscStyle>
+    </HomePageStyle>;
+}; 
