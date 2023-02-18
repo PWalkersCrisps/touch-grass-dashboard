@@ -7,6 +7,10 @@ import { GuildStatsPage } from './pages/GuildStatsPage';
 import { ModStatsPage } from './pages/ModStatsPage';
 import { GuildContext } from './utils/contexts/GuildContext';
 import { AppBar } from './components/AppBar';
+import { GuildSyncPage } from './pages/GuildSyncPage';
+import { ImageOnlyChannelPage } from './pages/ImageOnlyChannelPage';
+import { LogChannelPage } from './pages/LogChannelPage';
+import { ServerRolesPage } from './pages/ServerRolesPage';
 
 function App() {
     const [guildID, setGuildID] = React.useState<string>('');
@@ -21,8 +25,12 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/menu" element={<MenuPage />} />
                 <Route path="/dashboard/categories" element={<CategoryPage />} />
-                <Route path="/dashboard/stats/guild" element={} />
-                <Route path="/dashboard/guild/*" element={<h1>Guild</h1>} />
+                <Route path="/dashboard/stats/guild" element={<GuildStatsPage />} />
+                <Route path="/dashboard/stats/moderator" element={<ModStatsPage />} />
+                <Route path="/dashboard/guild/sync" element={<GuildSyncPage />} />
+                <Route path="/dashboard/guild/imageOnly" element={<ImageOnlyChannelPage />} />
+                <Route path="/dashboard/guild/logging" element={<LogChannelPage />} />
+                <Route path="/dashboard/guild/roles" element={<ServerRolesPage />} />
             </Routes>
         </GuildContext.Provider>
     );
